@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+</head>
+<body>
+    
+    <div style="width: fit-content; margin: 0 auto; padding-top: 5vh;">
+        <h2>Registration Form</h2>
+        <form action="#" method="POST">
+            
+            <p>
+                <label for="fullName">Full Name</label><br>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required autocomplete="name">
+            </p>
+
+            <p>
+                <label for="email">Email Address</label><br>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required autocomplete="email">
+            </p>
+
+            <p>
+                <label for="password">Password</label><br>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required minlength="8" autocomplete="new-password">
+            </p>
+
+            <p>
+                <label for="confirmPassword">Confirm Password</label><br>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" required minlength="8" autocomplete="new-password">
+            </p>
+
+            <fieldset style="border: none; padding: 0; margin: 0 0 1em 0;">
+                <legend style="padding: 0; font-weight: normal;">Gender</legend>
+                <label><input type="radio" name="gender" value="male" required> Male</label>
+                <label><input type="radio" name="gender" value="female" required> Female</label>
+                <label><input type="radio" name="gender" value="other" required> Other</label>
+            </fieldset>
+
+            <fieldset style="border: none; padding: 0; margin: 0 0 1em 0;">
+                <legend style="padding: 0; font-weight: normal;">Hobbies</legend>
+                <label><input type="checkbox" name="hobbies" value="sports"> Sports</label>
+                <label><input type="checkbox" name="hobbies" value="reading"> Reading</label>
+                <label><input type="checkbox" name="hobbies" value="music"> Music</label>
+            </fieldset>
+
+            <p>
+                <label for="dob">Date of Birth</label><br>
+                <input type="date" id="dob" name="dob" required autocomplete="bday">
+            </p>
+
+            <p>
+                <button type="submit">Register</button>
+            </p>
+            
+        </form>
+    </div>
+
+</body>
+</html>

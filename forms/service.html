@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Request Form</title>
+</head>
+<body>
+    
+    <div style="width: fit-content; margin: 0 auto; padding-top: 5vh;">
+        <h2>Service Request Form</h2>
+        <form action="#" method="POST">
+            
+            <p>
+                <label for="customerName">Customer Name</label><br>
+                <input type="text" id="customerName" name="customerName" placeholder="Enter your name" required autocomplete="name">
+            </p>
+
+            <p>
+                <label for="contactNumber">Contact Number</label><br>
+                <input type="tel" id="contactNumber" name="contactNumber" placeholder="Enter your phone number" required autocomplete="tel">
+            </p>
+
+            <p>
+                <label for="issueType">Issue Type</label><br>
+                <select id="issueType" name="issueType" required>
+                    <option value="">Select an issue type</option>
+                    <option value="laptop_repair">Laptop Repair</option>
+                    <option value="internet_issue">Internet Issue</option>
+                    <option value="software">Software Installation</option>
+                    <option value="other">Other</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="description">Description</label><br>
+                <textarea id="description" name="description" rows="4" cols="50" placeholder="Describe the issue in detail..." required></textarea>
+            </p>
+
+            <fieldset style="border: none; padding: 0; margin: 0 0 1em 0;">
+                <legend style="padding: 0; font-weight: normal;">Priority</legend>
+                <label><input type="radio" name="priority" value="low" required> Low</label>
+                <label><input type="radio" name="priority" value="medium" required> Medium</label>
+                <label><input type="radio" name="priority" value="high" required> High</label>
+            </fieldset>
+
+            <p>
+                <button type="submit">Submit Request</button>
+            </p>
+            
+        </form>
+    </div>
+
+</body>
+</html>

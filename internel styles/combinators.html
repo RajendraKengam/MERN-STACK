@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Combinators</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Adjacent sibling selector: used to select adjacent element */
+        ol + h1 {
+            color: #d32f2f;
+            background-color: #ffcdd2;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+
+        ol {
+            background-color: #e8f5e8;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #4caf50;
+        }
+
+        /* Child selector: used to select the element which is direct child of another element */
+        ol > li {
+            background-color: #c8e6c9;
+            margin: 5px 0;
+            padding: 8px;
+            border-radius: 3px;
+        }
+
+        /* General sibling selector: used to select siblings */
+        ol ~ h1 {
+            color: #7b1fa2;
+            background-color: #f3e5f5;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+
+        ul {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #2196f3;
+        }
+
+        ul > li {
+            background-color: #bbdefb;
+            margin: 5px 0;
+            padding: 8px;
+            border-radius: 3px;
+        }
+
+        /* Descendant selector: used to select the element which is descendant of another element */
+        ul p {
+            color: #1976d2;
+            background-color: #e1f5fe;
+            padding: 10px;
+            border-radius: 3px;
+            margin: 5px 0;
+            font-weight: bold;
+        }
+
+        h3, h4 {
+            margin: 20px 0 10px 0;
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        h4 {
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        /* Child selector: used to select the element which is direct child of another element */
+        h4 > p {
+            background-color: #fff3e0;
+            color: #e65100;
+            padding: 12px;
+            border-radius: 5px;
+            border-left: 4px solid #ff9800;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ordered List</h1>
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ol>
+
+    <h1>Unordered List</h1>
+    <ul>
+        <li><p>This paragraph is present here</p></li>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <h1>Heading in Third Position</h1>
+    <h3>
+        <h4>
+            <p>Heading 4</p>
+        </h4>
+    </h3>
+</body>
+</html>

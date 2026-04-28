@@ -1,0 +1,167 @@
+/* General Styles */
+:root {
+    --primary-dark: #333;
+    --secondary-dark: #555;
+    --light-text: #fff;
+    --border-light: #ccc;
+    --background-light: #f2f2f2;
+}
+
+* {
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    min-height: 100vh; /* For sticky footer */
+    display: flex; /* For sticky footer */
+    flex-direction: column; /* For sticky footer */
+}
+
+header {
+    background-color: var(--primary-dark);
+    color: var(--light-text);
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: var(--light-text);
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 2rem;
+    flex-grow: 1; /* Allows main content to expand and push footer down */
+}
+
+footer {
+    background-color: var(--primary-dark);
+    color: var(--light-text);
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Home Section */
+.banner {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.banner p {
+    font-size: 1.2rem;
+}
+
+.media {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+video, audio {
+    width: 48%; /* Adjusted slightly to allow for a small gap if needed, or just keep 45% */
+    max-width: 100%; /* Ensure they don't overflow on small screens before media query */
+}
+
+/* Responsive adjustments for media section */
+@media (max-width: 768px) {
+    .media {
+        flex-direction: column; /* Stack video and audio vertically */
+    }
+    video, audio {
+        width: 90%; /* Take up more width on small screens */
+        margin-bottom: 1rem; /* Add space between stacked elements */
+    }
+}
+
+/* Courses Section */
+#courses h2 {
+    text-align: center;
+}
+
+#courses ol, #courses ul {
+    margin-left: 2rem;
+}
+
+/* Schedule Section */
+#schedule h2 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+th {
+    background-color: var(--background-light);
+}
+
+/* Register Section */
+#register h2 {
+    text-align: center;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-light);
+    border-radius: 0.25rem; /* Use rem for consistency */
+}
+
+input[type="radio"] {
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+input[type="submit"] { /* Consider a class for buttons for more reusability */
+    background-color: var(--primary-dark);
+    color: var(--light-text);
+    border: none;
+    padding: 0.75rem;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--secondary-dark);
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        fieldset {
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+        h2 {
+            margin-top: 0;
+            color: #34495e;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            margin-top: 15px;
+        }
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus, input[type="email"]:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+        ol {
+            background-color: #fff;
+            padding: 20px 20px 20px 60px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+        li {
+            margin-bottom: 12px;
+            padding-left: 10px;
+        }
+        p {
+            font-size: 18px;
+            color: #ff6b6b;
+            font-weight: bold;
+            background-color: #2c3e50;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            word-wrap: break-word;
+        }
+        div.content {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        /* Pseudo-element Selectors */
+        h1::after {
+            content: " Class";
+            color: #e74c3c;
+        }
+        label::after {
+            content: " *";
+            color: #3498db; 
+        }
+        #Heading::before {
+            content: "Hello ";
+            color: #2ecc71;
+        }
+        label:last-of-type::before {
+            content: "📩 ";
+            color: orange;
+        }
+        label:first-of-type::before {
+            content: "👤 ";
+            color: orange;
+        }
+        h2::first-letter {
+            color: #2980b9;
+            font-style: italic;
+            font-size: 45px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        p::first-line {
+            font-size: 22px;
+            line-height: 1.5;
+            color: #f1c40f;
+        }
+        li:first-child::marker {
+            content: "👉 ";
+        }
+        li:nth-child(2)::marker {
+            content: "✌️ ";
+        }
+        li:nth-child(3)::marker {
+            content: "👌 ";
+        }
+        li:last-child::marker {
+            content: "👊 ";
+        }
+        div::selection {
+            background-color: #f1c40f;
+            color: #27ae60;
+        }
+        p::selection {
+            background-color: darkcyan;
+            color: white;
+        }
+        input::placeholder {
+            color: salmon;
+            font-style: italic;
+            font-weight: bold;
+        }
+     </style>
+</head>
+<body>
+    <h1 id="Heading">Welcome to Day 6</h1>
+    <form action="">
+        <fieldset>
+            <h2>Registration Form</h2>
+            <label for="">First Name</label>
+            <input type="text" placeholder="Enter Your Name">
+            <label for="">Email</label>
+            <input type="email" placeholder="Enter Your Email">
+        </fieldset>
+    </form>
+    <ol>
+        <li>First Item</li>
+        <li>Second Item</li>
+        <li>Third Item</li>
+        <li>Fourth Item</li>
+    </ol>
+
+    <p>
+       nfisigdfbhgsd jhuyguih hbgiugbhguihgher jvbvdfhfvjb herugeeb hguregueegbhebge
+       fugufuergygeggeyte jhbuegyer hbfygeb feuygue ufgyegfuer eyufuyeggjherbeyguyygfn g
+       bfguygfjheufhe yufUEGS   AhwqbXE WDWYCERB Y5Y7 D51   TFB4HWBVFW RF3NT4 HWYT
+       SMUTD TS FD2F NUDGHIHGUIIGjdg ghgierrghghgigr ggjg ndggg'
+    </p>
+    <div class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui rem consequuntur maxime voluptatibus explicabo a. Neque voluptatibus eum blanditiis nulla voluptate enim est provident accusantium quos? Voluptatem officiis repellendus atque?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam mollitia nam quasi voluptas tempora, voluptatum dicta aliquam deleniti, unde voluptatem aliquid veritatis fugit architecto fuga? Mollitia incidunt qui suscipit nesciunt.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus accusantium placeat maxime, velit minus, fugiat totam dolore optio aliquid officia magni consequatur recusandae quam aspernatur cum dolorum? Pariatur, est libero.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sequi dolorum mollitia possimus nihil iusto eos officiis numquam, aspernatur similique qui facere accusantium aliquid exercitationem. Necessitatibus laboriosam iure magni quidem.
+    </div>
+</body>
+</html> 

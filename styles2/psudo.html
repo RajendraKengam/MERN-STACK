@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student ID Card</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .id-card {
+            width: 400px;
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            text-align: center;
+            position: relative;
+        }
+
+        .header h4 {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: black;
+            font-weight: bold;
+        }
+        .header p{
+             margin: 5px 0 0;
+            font-size: 14px;
+            color: red;
+            font-weight: bold;
+            text-align: center;
+        }
+        .side-text{
+            writing-mode: sideways-rl;
+            text-orientation: mixed;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .photo-area {
+            padding: 20px 0;
+        }
+
+        .photo-area img {
+            width: 130px;
+            height: 160px;
+            border: 2px solid #ccc;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .side-text {
+            writing-mode: sideways-lr;
+            text-orientation: mixed;
+            font-weight: bold;
+            font-size: 14px;
+            color: black;
+            text-align: center;
+        }
+
+        .details {
+            padding: 10px 20px 30px;
+            text-align: left;
+        }
+
+        .detail-row {
+            margin-bottom: 10px;
+            display: flex;
+        }
+
+        .label {
+            font-weight: bold;
+            color: black;
+            width: 100px;
+            font-size: 14px;
+            text-align: right;
+        }
+
+        .value {
+            color: black;
+            font-size: 14px;
+            flex: 1;
+            padding-right: 10px;
+            font-weight: bold;
+        }
+
+        .name-row {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .full-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+            text-transform: uppercase;
+        }
+
+        .footer {
+            padding: 10px 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .signature {
+            text-align: center;
+        }
+
+        .signature p {
+            margin: 0;
+            font-size: 12px;
+            font-weight: bold;
+            color: black;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="id-card">
+        <div class="header">
+            <img src="https://resources.saylor.org/wwwresources/wp-content/uploads/20200717101134/BITS-VIzag-logo.jpg" alt="College Logo" style="width: 400px; height: 100px;" align="center">
+            <h4>Approved by AICTE, New Delhi & Affiliated to JNTUGV</h4>
+            <h4>"Accredited by NAAC with "<span style="color: red;">A</span>" Grade"</h4>
+            <h4>An ISO 9001:2015 Certified Institution</h4>
+        </div>
+
+        <div class="photo-area">
+            <img src="https://i1.sndcdn.com/artworks-000169672613-mecyps-t1080x1080.jpg" alt="Student Photo">
+        </div>
+
+        <div class="details">
+            <div class="name-row">
+                <div class="full-name">Name: KENGAM RAJENDRA</div>
+            </div>
+
+            <div class="detail-row">
+                <span class="label">Regd. No :</span>
+                <span class="value">23NR1A0578</span>
+            </div>
+
+            <div class="detail-row">
+                <span class="label">Course :</span>
+                <span class="value">B.Tech</span>
+            </div>
+
+            <div class="detail-row">
+                <span class="label">Branch :</span>
+                <span class="value">CSE</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="signature">
+                <img src="https://img.freepik.com/premium-vector/signature_951413-443.jpg?w=2000" alt="Principal Signature" style="width: 75px; height: 40px;">
+                <p>PRINCIPAL</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

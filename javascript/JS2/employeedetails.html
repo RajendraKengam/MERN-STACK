@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    tbody tr:nth-child(odd){
+        background-color: blueviolet;
+    }
+    body{
+       display: flex;
+       flex-direction: column;
+       align-items: center;   
+    }
+</style>
+<body>
+    <h1>Emp Details</h1>
+    <input type="search" placeholder="search here">
+    <table border="1" cellspacing="0" cellpadding="10">
+        <thead bgcolor="skyblue">
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Salary</th>
+                <th>Address</th>
+                <th>Number</th>
+            </tr>
+        </thead>
+        <tbody id="empTableBody">
+            <tr>
+                <td>Osama bin laden</td>
+                <td>pilot</td>
+                <td>150000</td>
+                <td>New York</td>
+                <td>3948935849</td>
+            </tr>
+            <tr>
+                <td>Pablo Escobar</td>
+                <td>Business Entrepreneur</td>
+                <td>300000</td>
+                <td>Mexcico</td>
+                <td>6739439404</td>
+            </tr>
+            <tr>
+                <td>Dawood Ibrahim</td>
+                <td>Infulencer</td>
+                <td>120000</td>
+                <td>Pakisthan</td>
+                <td>9764523670</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        document.querySelectorAll("tbody tr");
+        console.log(rows)
+    </script>
+</body>
+</html>

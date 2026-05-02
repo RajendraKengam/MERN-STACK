@@ -52,9 +52,26 @@
             </tr>
         </tbody>
     </table>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, ducimus consequuntur. Maiores, laborum. Reprehenderit aliquam natus deleniti harum nobis facilis nostrum facere aliquid! Qui eos distinctio modi cupiditate temporibus cumque.</p>
+    <button onclick="disappearParagraph()"> click here</button>
     <script>
-        document.querySelectorAll("tbody tr");
-        console.log(rows)
-    </script>
+        function disappearParagraph() {
+            let para = document.querySelector("p");
+            para.style.display = (para.style.display == "block") ? "none" : "block"
+        }
+        let rows = document.querySelectorAll("tbody tr");
+        let input = document.querySelector("input");
+        input.addEventListener('keyup', () => {
+            let inputText = input.value.toLowerCase();
+            rows.forEach((row) => {
+                let rowData = row.textContent;
+
+                let result = rowData.toLowerCase().includes(inputText);
+                console.log(result);
+
+                row.style.display = result ? "" : "none"
+            })
+        })
+   </script>
 </body>
 </html>

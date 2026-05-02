@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password">
+            </div>
+            <button type="submit">Login</button>
+            <a href="register.html" class="link">Don't have an account? Register</a>
+        </form>
+    </div>
+
+    <script>
+        // Bonus: Prevent logged-in users from seeing the login page
+        if (localStorage.getItem('isLoggedIn') === 'true') {
+            window.location.href = 'home.html';
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const user = document.getElementById('username').value.trim();
+            const pass = document.getElementById('password').value.trim();
+            
+            const storedUser = localStorage.getItem('username');
+            const storedPass = localStorage.getItem('password');
+
+            if (user === storedUser && pass === storedPass && storedUser !== null) {
+                localStorage.setItem('isLoggedIn', 'true'); // Set a session flag
+                window.location.href = 'home.html';
+            } else {
+                // Rejects if credentials don't match or if user tries to login without registering 
+                alert('Invalid Username or Password');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        width:100px;
+        height:100px;
+        border-radius:50%;
+    }
+    div{
+        margin: 20px;
+        display: flex;
+        padding: 10px;
+        background-color: antiquewhite;
+        justify-content: space-around;
+    }
+    div:nth-child(odd){
+        background-color: aquamarine;
+    }
+    span{
+        font-weight: bold;
+    }
+
+</style>
+<body>
+    <script>
+        let apiURL="https://api.github.com/users";
+        let body=document.querySelector("body");
+        fetch(apiURL)
+            .then((res)=>res.json())
+            .then((users)=>{
+                users.forEach((user) => {
+                    console.log(user.login,user.id,user.user_view_type);
+                    let div=document.createElement("div");
+                    let img=document.createElement("img");
+                    let ol=document.createElement("ol");
+                    let li1=document.createElement("li");
+                    let li2=document.createElement("li");
+                    let li3=document.createElement("li");
+
+                    div.appendChild(img);
+                    div.appendChild(ol);
+                    ol.appendChild(li1);
+                    ol.appendChild(li2);
+                    ol.appendChild(li3);
+                    body.appendChild(div);
+                    img.src=user.avatar_url;
+
+                    li1.innerHTML=`<span>User Name:</span> ${user.login}`;
+                    li2.innerHTML=`<span>User ID:</span> ${user.id}`;
+                    li3.innerHTML=`<span>User View Type:</span> ${user.user_view_type}`;
+
+                });
+            })
+            .catch((err)=>console.log(err))
+    </script>
+</body>
+</html>

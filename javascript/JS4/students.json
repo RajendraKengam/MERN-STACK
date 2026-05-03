@@ -1,0 +1,19 @@
+[ {
+    "name":"ravi",
+    "rollno":12,
+    "active":true
+},
+{
+    "name":"rani",
+    "rollno":34,
+    "active":true
+},
+{
+    "name":"teja",
+    "rollno":56,
+    "age":21,
+    "course":"MERN",
+    "active":false,
+    "email":"teja@123.com",
+    "password":"teja123"
+} ]

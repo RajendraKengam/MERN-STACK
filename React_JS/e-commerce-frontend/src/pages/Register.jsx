@@ -1,11 +1,9 @@
-import React from 'react'
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import { toast, ToastContainer } from "react-toastify";
-import { Link } from "react-router-dom";
 
 function Register() {
   const [details, setDetails] = useState({
@@ -15,6 +13,7 @@ function Register() {
     password: "",
     address: "",
     city: "",
+    userType: "user",
     state: "",
     zipCode: "",
   });
@@ -27,12 +26,10 @@ function Register() {
     e.preventDefault();
     console.log(details);
     toast.success("register successfully 😊");
-    
   };
 
   return (
     <div id="form-container">
-      <h2>Register</h2>
       <Form onSubmit={handleSubmit}>
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridName">
@@ -71,6 +68,15 @@ function Register() {
             />
           </Form.Group>
 
+          <Form.Group as={Col} controlId="formGridUserType">
+            <Form.Label>User Type</Form.Label>
+            <Form.Select name="userType" onChange={handleChange}>
+              <option>Choose User Type</option>
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </Form.Select>
+          </Form.Group>
+
           <Form.Group as={Col} controlId="formGridPassword">
             <Form.Label>Create Password</Form.Label>
             <Form.Control
@@ -107,7 +113,7 @@ function Register() {
               required
               defaultValue="Choose..."
             >
-              <option value="">Choose State</option>
+              <option>Choose State</option>
               <option value="Andhra pradesh">AP</option>
               <option value="Karnataka">KA</option>
               <option value="Telangana">TL</option>
@@ -129,7 +135,7 @@ function Register() {
         <Form.Group className="mb-3">
           <span>
             If You Already Have Register Click here to{" "}
-            <Link to="/login">login</Link>
+            <a href="/login">login</a>
           </span>
         </Form.Group>
 

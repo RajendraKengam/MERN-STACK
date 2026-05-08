@@ -2,8 +2,10 @@ import React from 'react'
 
 const Products = () => {
   return (
-    <div>Products</div>
+    <div>
+      products page
+    </div>
   )
 }
 
-export default Products;
+export default Products

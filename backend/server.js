@@ -1,19 +1,17 @@
 const express = require('express');
-// const cors = require('cors'); // Uncomment after running: npm install cors
 const app = express();
-const PORT = process.env.PORT || 5000;
+const port = 5000;
 const connection = require('./config/db');
-
-// Middleware
-// app.use(cors()); // Allow requests from frontend
 app.use(express.json());
 
-// Database Connection
-connection(); 
+connection();
 
-const studentRouter=require("./routes/studentRouter");
-app.use("/students", studentRouter);
+const studentRouter = require('./routes/studentRouter');
+const collegeRouter = require('./routes/collageRouter');
 
-app.listen(PORT,() =>{
-    console.log(`Server is running on port ${PORT}`);
-});
+app.use("/student", studentRouter);
+app.use("/college", collegeRouter);
+
+app.listen(port, () => {
+    console.log("server running on port:", port);
+})

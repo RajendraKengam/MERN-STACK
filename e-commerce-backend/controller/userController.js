@@ -1,8 +1,7 @@
-//add Users
 const Users = require("../model/UserModel");
 const bcrypt = require("bcrypt");
-//{}=req.body; = object destructuring -- individual variables to be stored
-
+const jwt = require("jsonwebtoken");
+//add user
 const register = async (req, res) => {
   try {
     const {
@@ -19,7 +18,6 @@ const register = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    //storing in the new object called as newUser
     const newUser = {
       name: name,
       email: email,
@@ -38,56 +36,39 @@ const register = async (req, res) => {
   }
 };
 
-//get all users
-const getUsers = async (req, res) => {
-  try {
-    // .find({}) fetches all documents from the collection
-    // Note: If you are using Mongoose, use .find({}). If using raw MongoDB driver, use .find({}).toArray()
-    const allUsers = await Users.find();
-
-    res.status(200).json({
-      message: "Users fetched successfully",
-      data: allUsers,
-    });
-  } catch (error) {
-    res.status(500).json({ message: "Failed to fetch users", err: error });
-  }
-};
-
 //login handler
 const login = async (req, res) => {
   try {
     const { username, password } = req.body;
     const foundUser = await Users.findOne({ email: username });
+    //generate JWT new token
+    const token = await jwt.sign(
+      {id:foundUser._id, role: foundUser.userType, email: username },
+      process.env.SECRETE_KEY,
+      { notBefore: "10s", expiresIn: "20M" },
+    );
 
+    // console.log("generated Token:", token);
     const hashedPassword = await bcrypt.compare(password, foundUser.password);
-
     if (!hashedPassword) {
       res.status(401).json({ message: "invalid password" });
     }
-    res.status(202).json({ message: "login successfull" });
+  
+    res.status(202).json({ message: "login successful", token });
   } catch (error) {
     res.status(500).json({ message: "username not found" });
   }
 };
-
-//get user based on id
-const getUserBasedonId = async (req, res) => {
+// getUser
+const getUserBasedOnID = async (req, res) => {
   try {
-    // .find({}) fetches all documents from the collection
-    // Note: If you are using Mongoose, use .find({}). If using raw MongoDB driver, use .find({}).toArray()
-    const allUsers = await Users.find(req.params.id);
-
-    res.status(200).json({
-      message: "Users fetched successfully",
-      data: allUsers,
-    });
+    const foundUser = await Users.findById(req.params.id);
+    res.status(200).json({ foundUser });
   } catch (error) {
-    res.status(500).json({ message: "Failed to fetch users", err: error });
+    res.status(500).json({ message: "failed to get user" });
   }
 };
-
-//update Profile
+// update profile
 const updateProfile = async (req, res) => {
   try {
     const updatedProfile = await Users.findByIdAndUpdate(
@@ -95,18 +76,28 @@ const updateProfile = async (req, res) => {
       req.body,
       { new: true },
     );
-    res.status(200).json({ message: "update successfully", updatedPrpfile });
+    res.status(200).json({ message: "updated successfully", updatedProfile });
   } catch (error) {
     res.status(500).json({ message: "failed to update profile", err: error });
   }
+};
+
+// get Users
+const getAllUsers = async (req, res) => {
+  // try {
+  const allUsers = await Users.find();
+  res.status(200).json({ allUsers });
+  // } catch (error) {
+  res.status(500).json({ message: "failed to get users", err: error });
+  // }
 };
 
 //forget password
 const forgetPassword = async (req, res) => {
   const hashedPassword = await bcrypt.hash(req.body.password, 10);
   try {
-   await Users.findOneAndUpdate(
-      { email: req.body.email },
+    const updatedUser = Users.findByIdAndUpdate(
+      req.params.id,
       { password: hashedPassword },
       { new: true },
     );
@@ -118,9 +109,9 @@ const forgetPassword = async (req, res) => {
 
 module.exports = {
   register,
-  getUsers,
   login,
-  forgetPassword,
+  getUserBasedOnID,
+  getAllUsers,
   updateProfile,
-  getUserBasedonId,
+  forgetPassword,
 };

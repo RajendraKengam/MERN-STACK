@@ -1,15 +1,18 @@
 const express = require("express");
-const {register,getUsers, login, forgetPassword, updateProfile, getUserBasedonId} = require("../controller/userController");
+const {
+  register,
+  login,
+  getUserBasedOnID,
+  getAllUsers,
+  updateProfile,
+  forgetPassword,
+} = require("../controller/userController");
+const router = express.Router();
 
-const router=express.Router();
-
-
-router.post("/register",register) //http://localhost:5000/user/register
-router.get("/get-users",getUsers)
-router.post("/login",login);
-router.get("/get-users", getUserBasedonId);
-router.patch("/update-profile", updateProfile);
-router.patch("/forget-password",forgetPassword)
-
-module.exports=router;
-
+router.post("/register", register);  //http://localhost:5000/user/register
+router.post("/login", login);
+router.get("/get-users",getAllUsers);
+router.get("/get-user/:id",getUserBasedOnID);
+router.patch("/update-profile",updateProfile);
+router.patch("/forget-password",forgetPassword);
+module.exports = router;

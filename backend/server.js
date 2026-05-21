@@ -1,17 +1,17 @@
-const express = require('express');
-const app = express();
-const port = 5000;
-const connection = require('./config/db');
+const express=require("express");
+const app=express();
+const PORT=5000;
+const connection=require("./config/db");
 app.use(express.json());
-
 connection();
+const studentRouter=require("./routes/studentRouter");
+const collegeRouter=require("./routes/collegeRouter")
 
-const studentRouter = require('./routes/studentRouter');
-const collegeRouter = require('./routes/collageRouter');
+app.use("/students",studentRouter);
+app.use("/college",collegeRouter);
 
-app.use("/student", studentRouter);
-app.use("/college", collegeRouter);
-
-app.listen(port, () => {
-    console.log("server running on port:", port);
+app.listen(PORT,()=>{
+  console.log("Server running on port",PORT);
 })
+
+

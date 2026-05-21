@@ -1,13 +1,14 @@
 {
-  "name": "expressjs",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "\"sample Project\"",
+  "description": "\"sample backend Project\"",
+  "license": "ISC",
+  "author": "ravi",
+  "type": "commonjs",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "rambabu",
-  "license": "ISC",
   "dependencies": {
     "express": "^5.2.1",
     "mongoose": "^9.6.2"
